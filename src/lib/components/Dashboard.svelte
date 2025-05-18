@@ -2,7 +2,8 @@
 	import { Chart } from 'flowbite-svelte';
 
 	import { dashboardData } from '$lib/stores/dashboardState';
-
+	import ChartCard from './ChartCard.svelte';
+	import Table from './Table.svelte';
 	import type { ApexOptions } from 'apexcharts';
 	import { getBaseChartOptions } from '$lib/utils/getBaseChart';
 	let artifactOptions: ApexOptions | null = null;
@@ -67,8 +68,6 @@
 		artifactOptions = getBaseChartOptions(artifactSeries, artifactDates);
 		stationOptions = getBaseChartOptions(stationSeries, stationDates);
 	}
-
-	import ChartCard from './ChartCard.svelte';
 </script>
 
 <div class="flex w-full flex-col items-center justify-center p-16">
@@ -84,5 +83,8 @@
 				<Chart class="w-full" slot="chart" options={artifactOptions} />
 			</ChartCard>
 		{/if}
+	</div>
+	<div class="flex w-full max-w-7xl flex-col items-center justify-center">
+		<Table />
 	</div>
 </div>
