@@ -7,6 +7,11 @@ export type JellyfaasToken = {
 	expiry: string;
 };
 
+export type DashboardQuery = {
+	station?: SpaceStation;
+	artifact?: Artifact;
+};
+
 export type SpaceStation =
 	| 'Alpha Centauri'
 	| 'Beta Hydri'
